@@ -1,0 +1,38 @@
+
+#include <iostream>  
+#include <ctime>  
+#include <cstdlib> 
+using namespace std; 
+
+int main()
+{   
+    
+    srand(time(0)); 
+    int consecutive_heads = 0;  
+    int total_flips = 0;  
+
+    while (consecutive_heads < 3 ){
+        
+        int flip = rand()% 2;  
+        
+        if (flip == 0){ 
+            cout << "Heads" << endl; 
+            consecutive_heads++; 
+            total_flips++; 
+
+        } 
+        if (flip == 1) {
+            cout << "Tails" << endl; 
+            consecutive_heads = 0; 
+            total_flips++; 
+
+
+        }
+    }
+
+    cout << "It took " << total_flips << " flips to get 3 consecutive heads." << endl;  
+    
+
+    return 0; 
+
+} 
